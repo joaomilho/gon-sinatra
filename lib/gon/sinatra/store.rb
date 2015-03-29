@@ -36,6 +36,12 @@ module Gon
       end
       alias :set :set_variable
 
+      def push(hash)
+        hash.each do |variable, value|
+          set(variable.to_s, value)
+        end
+      end
+
       def rabl(view_path, options = {})
         unless defined?(::Rabl)
           raise Exception.new("You must require rabl and register Gon::Sinatra::Rabl to use rabl")

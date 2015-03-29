@@ -83,6 +83,13 @@ gon.your_array # > [1, 2, 123]
 gon.clear # gon.all_variables now is {}
 ```
 
+Or something like this:
+
+``` ruby
+gon.push({:a => 1, :b => 2})
+gon.all_variables # > {:a => 1, :b => 2}}
+```
+
 Access the varaibles from your JavaScript file:
 
 ``` js

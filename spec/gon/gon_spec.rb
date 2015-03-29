@@ -26,6 +26,12 @@ describe Gon::Sinatra, '#all_variables' do
     expect(@gon.all_variables).to eq({'a' => 1, 'b' => 2, 'c' => 3})
   end
 
+  it 'allows pushing a hash' do
+    hash = {:a => 1, :b => 2}
+    @gon.push(hash)
+    expect(@gon.all_variables).to eq({'a' => 1, 'b' => 2})
+  end
+
   it 'supports all data types' do
     @gon.clear
     @gon.int = 1
